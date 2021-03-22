@@ -67,3 +67,40 @@ module.exports = {
 export default{}
 </script>
 ```
+
+# Widget with Dynamic & Closable tabs
+1. Create a reference to `WidgetMenu` component
+    - Template: `<WidgetMenu ref="refName" />`
+    - Script: `this.refs.refName`
+2. Invoke the `createMenu` method
+```js
+<template>
+    <div>
+        <Widget>
+            <template #widget="{selectedMenu, selectedMenu__payload}" >
+                <WidgetTitle> Sample title </WidgetTitle>
+                <WidgetMenu ref="WidgetMenu" :menus="['foo','bar']" :defaultSelected="0" />
+                <WidgetContent>
+                    <template #widgetContent  >
+                        {{selectedMenu}} <!-- foo -->
+                    </template>
+                </WidgetContent>
+            </template>
+        </Widget>
+    </div>
+</template>
+
+<script>
+export default{
+    mounted() {
+        const WigetMenuReference = this.refs.WidgetMenu
+        WigetMenuReference.createMenu({
+            name: 'tab name',
+            payload: {}, // can be access in selectedMenu__payload in template
+            isActive: true,
+            isClosable: true
+        })
+    }
+}
+</script>
+```
