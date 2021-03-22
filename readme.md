@@ -82,7 +82,8 @@ export default{}
                 <WidgetMenu ref="WidgetMenu" :menus="['foo','bar']" :defaultSelected="0" />
                 <WidgetContent>
                     <template #widgetContent  >
-                        {{selectedMenu}} <!-- foo -->
+                        {{selectedMenu}} <!-- tab name, because of isActive -->
+                        {{selectedMenu__payload}} <!-- you can now use this for render condition -->
                     </template>
                 </WidgetContent>
             </template>
