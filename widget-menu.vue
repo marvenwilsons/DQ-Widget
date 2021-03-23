@@ -28,7 +28,8 @@ export default {
         currentMenus: [],
         showMenu: true,
         closableMenus: [],
-        payload: []
+        payload: [],
+        theme: undefined
     }),
     watch: {
         selectedMenu(index) {
@@ -107,6 +108,7 @@ export default {
         }
     },
     mounted() {
+        this.$parent.theme
         if(this.defaultSelected != undefined) {
             this.selectedMenu = this.defaultSelected
         } else {

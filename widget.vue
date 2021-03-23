@@ -1,19 +1,28 @@
 <template>
-    <section class="widgetsection s relative fullwidth">
+    <section v-if="theme" :style="{ background: theme.body_background}" class="widgetsection s relative fullwidth">
         <slot :selectedMenu__payload="menuPayload" :selectedMenu="currentSelectedMenu" :widgetState="currentWidgetState" name="widget" ></slot>
     </section>
 </template>
 
 <script>
+import themes from './themes/index'
 export default {
-    props: ['show'],
+    props: ['show', 'theme'],
     data: () => ({
         childMethod: [],
         currentSelectedMenu: undefined,
         menuPayload: undefined,
         currentWidgetState: undefined,
+        mytheme: {}
     }),
     mounted() {
+        if(!this.theme) {
+            this.mytheme = themes.light
+        } else if(typeof this.theme == 'object') {
+            this.mytheme = this.theme
+        } else if(typeof this.theme == 'string') {
+            this.mytheme = themes[this.theme]
+        }
         // mountController is called by child component
         this.mountController = (childMethod) => {
             this.childMethod.push(childMethod)
