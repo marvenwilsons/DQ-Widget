@@ -46,7 +46,7 @@ module.exports = {
 - `<WidgetMenu/>` - Display's tabs
 
 # Widget Fixed tabs
-```js
+```html
 <template>
     <div>
         <Widget>
@@ -73,7 +73,7 @@ export default{}
     - In Template: `<WidgetMenu ref="refName" />`
     - In Script: `this.$refs.refName`
 2. Invoke the `createMenu(<config & payload:Object>)` method
-```js
+```html
 <template>
     <div>
         <Widget>
@@ -112,7 +112,7 @@ export default{
 2. Invoke `showModal(<payload:any>)` method
     - payload is accessable in `modalContext` in tamplate
 
-```js
+```html
 <template>
     <div>
         <Widget>
