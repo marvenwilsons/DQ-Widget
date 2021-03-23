@@ -1,9 +1,9 @@
 {
-    "body_bg": "white",
+    "body_bg": "#fdfdfe",
     "title_color":"black",
-    "tab_bg": "lightgray",
-    "tab_item_border_color": "gray",
-    "tab_item_active_color": "#333",
-    "tab_item_active_bg": "yellow",
+    "tab_bg": "#ebf2f6 ",
+    "tab_item_border_color": "#c9dce5",
+    "tab_item_active_color": "#3c4244",
+    "tab_item_active_bg": "#a7c6d4",
     "tab_item_close_color": "#333"
 }

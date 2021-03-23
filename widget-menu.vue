@@ -10,12 +10,23 @@
                 <div class="absolute" >
                     <div class="flex" >
                         <div 
-                            v-for="(item, item_index) in currentMenus" :key="`${item}-${item_index}`" @click.self="selectedMenu = item_index" 
+                            v-for="(item, item_index) in currentMenus" :key="`${item}-${item_index}`" 
+                            @click.self="selectedMenu = item_index" 
                             :class="['borderRad4', 'pad025', 'padleft050', 'padright050', 'calItem', 
-                            selectedMenu == item_index ? 'active' : '']" 
-                            style="border: 1px solid #3b485c;" >
+                            selectedMenu == item_index ? '' : '']" 
+                            :style="{
+                                border: `1px solid ${tabMenu_theme.tab_item_border_color}`, 
+                                background: selectedMenu == item_index ? tabMenu_theme.tab_item_active_bg : '',
+                                color: tabMenu_theme.tab_item_active_color
+                            }" 
+                            >
                                 {{item}}
-                                <v-icon @click.self="closeMenu(item), gotoMenu(currentMenus[item_index - 1])" v-if="closableMenus.includes(item)" >
+                                <v-icon 
+                                    @click.self="closeMenu(item), 
+                                    gotoMenu(currentMenus[item_index - 1])" 
+                                    v-if="closableMenus.includes(item)" 
+                                    :style="{color: tabMenu_theme.tab_item_active_color}"
+                                    >
                                     mdi-close
                                 </v-icon>
                         </div>
@@ -135,8 +146,8 @@ export default {
 
 <style>
 .calItem:hover {
-    background: orange;
-    color: #333;
+    /* background: orange; */
+    /* color: #333; */
     cursor: pointer;
 }
 .calItem{
