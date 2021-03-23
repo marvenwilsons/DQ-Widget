@@ -6,5 +6,7 @@
     "tab_item_border_color": "#86a6bd",
     "tab_item_active_color": "#3c4244",
     "tab_item_active_bg": "#f9fbfc",
-    "tab_item_close_color": "#333"
+    "tab_item_close_color": "#333",
+    "modal_text_color":"#333",
+    "modal_border": "rgba(5, 5, 5, 0.11)"
 }
