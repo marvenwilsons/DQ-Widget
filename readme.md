@@ -1,3 +1,4 @@
+# Demo
 ![ Alt text](Demo.gif)
 # Installation
 ### Nuxt.js
