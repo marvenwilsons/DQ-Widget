@@ -1,5 +1,5 @@
 <template>
-    <section v-if="mytheme" :style="{ background: mytheme.body_bg}" class="widgetsection s relative fullwidth">
+    <section v-if="mytheme" :style="{ background: mytheme.body_bg, overflow:'hidden'}" class="widgetsection systemui s relative fullwidth">
         <slot :selectedMenu__payload="menuPayload" :selectedMenu="currentSelectedMenu" :widgetState="currentWidgetState" name="widget" ></slot>
     </section>
 </template>
@@ -55,14 +55,7 @@ export default {
 </script>
 
 <style>
-.widget-border {
-    /* border: 1px solid #3b485c; */
-}
 .widgetsection {
-  /* background: #26344a; */
-  -webkit-box-shadow: 0px 0px 22px -6px rgba(0,0,0,0.71);
-  -moz-box-shadow: 0px 0px 22px -6px rgba(0,0,0,0.71);
-  box-shadow: 0px 0px 22px -6px rgba(0,0,0,0.71);
   border-radius: 4px !important;
 }
 </style>

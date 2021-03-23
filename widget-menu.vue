@@ -1,30 +1,32 @@
 <template>
     <v-expand-transition>
-        <div id="dq-main-w" v-if="showMenu" class="padleft125 padright125 flex">
+        <div id="dq-main-w" v-if="showMenu" class="flex wds">
             <div
                 v-if="tabMenu_theme"
                 id="dq-host-container"  
                 :style="{height:'39px', overflowY:'hidden', overflowX: 'auto', margin:0, padding:0, whiteSpace: 'nowrap', background: tabMenu_theme.tab_bg}" 
-                class="flex widgetsection relative" 
+                class="flex ws relative" 
             >
                 <div class="absolute" >
-                    <div class="flex" >
+                    <div class="flex padleft050 padright050" >
                         <div 
                             v-for="(item, item_index) in currentMenus" :key="`${item}-${item_index}`" 
-                            @click.self="selectedMenu = item_index" 
-                            :class="['borderRad4', 'pad025', 'padleft050', 'padright050', 'calItem', 
+                            
+                            :class="['borderRad4', 'pad025', 'padleft050', 'padright050', 'calItem', '', 
                             selectedMenu == item_index ? '' : '']" 
                             :style="{
                                 border: `1px solid ${tabMenu_theme.tab_item_border_color}`, 
                                 background: selectedMenu == item_index ? tabMenu_theme.tab_item_active_bg : '',
-                                color: tabMenu_theme.tab_item_active_color
+                                color: tabMenu_theme.tab_item_active_color,
+                                borderRadius: '4px'
                             }" 
                             >
-                                {{item}}
+                                <span @click.self="selectedMenu = item_index" class="systemui" >{{item}}</span>
                                 <v-icon 
                                     @click.self="closeMenu(item), 
                                     gotoMenu(currentMenus[item_index - 1])" 
-                                    v-if="closableMenus.includes(item)" 
+                                    v-if="closableMenus.includes(item)"
+                                    small
                                     :style="{color: tabMenu_theme.tab_item_active_color}"
                                     >
                                     mdi-close
@@ -152,5 +154,9 @@ export default {
 }
 .calItem{
     min-width: 40px;
+    transition: 0.2s;
+}
+.ws{
+    box-shadow: 0px 16px 15px -3px rgba(5, 5, 5, 0.11);
 }
 </style>

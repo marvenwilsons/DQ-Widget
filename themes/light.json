@@ -1,9 +1,10 @@
 {
     "body_bg": "#fdfdfe",
-    "title_color":"black",
-    "tab_bg": "#ebf2f6 ",
-    "tab_item_border_color": "#c9dce5",
+    "title_color":"#333",
+    "title_bg":"#86a6bd",
+    "tab_bg": "#86a6bd",
+    "tab_item_border_color": "#86a6bd",
     "tab_item_active_color": "#3c4244",
-    "tab_item_active_bg": "#a7c6d4",
+    "tab_item_active_bg": "#f9fbfc",
     "tab_item_close_color": "#333"
 }
