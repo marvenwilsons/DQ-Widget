@@ -40,10 +40,10 @@ module.exports = {
 - widgetContext
 
 # Widget components
-- `Widget`
-- `WidgetContent`
-- `WidgetTitle`
-- `WidgetMenu`
+- `<Widget/>` - Wrapper
+- `<WidgetContent/>` - The main content of the widget
+- `<WidgetTitle/>` - Display's title on the top of the widget
+- `<WidgetMenu/>` - Display's tabs
 
 # Widget Fixed tabs
 ```js
@@ -70,9 +70,9 @@ export default{}
 
 # Widget with Dynamic & Closable tabs
 1. Create a reference to `WidgetMenu` component
-    - Template: `<WidgetMenu ref="refName" />`
-    - Script: `this.refs.refName`
-2. Invoke the `createMenu` method
+    - In Template: `<WidgetMenu ref="refName" />`
+    - In Script: `this.$refs.refName`
+2. Invoke the `createMenu(<config & payload:Object>)` method
 ```js
 <template>
     <div>
@@ -105,3 +105,45 @@ export default{
 }
 </script>
 ```
+# Using widget modal
+1. Create a reference to `WigetContent` component
+    - In Template `<WidgetContent ref="WidgetContent" />`
+    - In Script `this.$refs.WidgetContent`
+2. Invoke `showModal(<payload:any>)` method
+    - payload is accessable in `modalContext` in tamplate
+
+```js
+<template>
+    <div>
+        <Widget>
+            <template #widget="{selectedMenu, selectedMenu__payload}" >
+                <WidgetTitle> Sample title </WidgetTitle>
+                <WidgetMenu :menus="['foo','bar']" :defaultSelected="0" />
+                <WidgetContent ref="WidgetContent" >
+                    <!-- modal here -->
+                    <template v-if="true" #modal="{modalContext}" >
+                        {{modalContext}} <!-- it will print: pass anything here. -->
+                    </template>
+                    <template #widgetContent  >
+                        {{selectedMenu}} <!-- foo -->
+                    </template>
+                </WidgetContent>
+            </template>
+        </Widget>
+    </div>
+</template>
+
+<script>
+export default{
+    mounted() {
+        const WidgetContentReference = this.refs.WidgetContent
+        WidgetContentReference.showModal("pass anything here.")
+    }
+}
+</script>
+```
+3. to close the modal programatically, call the `showModal()` again, it toggles from `true` and `false` every method call.
+    - the modal can also be closed by clicking outside of the modal.
+
+# Using Themes and custom colors
+todo
