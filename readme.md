@@ -1,3 +1,4 @@
+![ Alt text](Demo.gif)
 # Installation
 ### Nuxt.js
 - Create a new directory in components if doesn't exist, named globals.
