@@ -1,7 +1,12 @@
 <template>
     <v-expand-transition>
         <div id="dq-main-w" v-if="showMenu" class="padleft125 padright125 flex">
-            <div  id="dq-host-container"  style="height:39px; overflow-y:hidden; overflow-x: auto; margin:0; padding:0; white-space: nowrap;" class="flex widgetsection relative" >
+            <div
+                v-if="tabMenu_theme"
+                id="dq-host-container"  
+                :style="{height:'39px', overflowY:'hidden', overflowX: 'auto', margin:0, padding:0, whiteSpace: 'nowrap', background: tabMenu_theme.tab_bg}" 
+                class="flex widgetsection relative" 
+            >
                 <div class="absolute" >
                     <div class="flex" >
                         <div 
@@ -29,7 +34,7 @@ export default {
         showMenu: true,
         closableMenus: [],
         payload: [],
-        theme: undefined
+        tabMenu_theme: undefined
     }),
     watch: {
         selectedMenu(index) {
@@ -108,7 +113,6 @@ export default {
         }
     },
     mounted() {
-        this.$parent.theme
         if(this.defaultSelected != undefined) {
             this.selectedMenu = this.defaultSelected
         } else {
@@ -120,9 +124,11 @@ export default {
             this.payload.push(e)
         })
 
-        setTimeout(() => [
+        setTimeout(() => {
             this.$parent.mountController(this.showMenuController)
-        ], 5)
+            this.tabMenu_theme = this.$parent.mytheme
+
+        }, 5)
     }
 }
 </script>

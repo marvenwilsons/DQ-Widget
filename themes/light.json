@@ -1,3 +1,9 @@
 {
-    
+    "body_bg": "white",
+    "title_color":"black",
+    "tab_bg": "lightgray",
+    "tab_item_border_color": "gray",
+    "tab_item_active_color": "#333",
+    "tab_item_active_bg": "yellow",
+    "tab_item_close_color": "#333"
 }
