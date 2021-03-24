@@ -1,12 +1,13 @@
 {
-    "body_bg": "#fdfdfe",
-    "title_color":"#333",
-    "title_bg":"#86a6bd",
-    "tab_bg": "#86a6bd",
-    "tab_item_border_color": "#86a6bd",
+    "body_bg": "#26344a",
+    "title_color":"#a1b2ce",
+    "title_bg":"#1f2b3d",
+    "tab_bg": "#1f2b3d",
+    "tab_item_border_color": "",
     "tab_item_active_color": "#3c4244",
-    "tab_item_active_bg": "#f9fbfc",
-    "tab_item_close_color": "#333",
-    "modal_text_color":"#333",
-    "modal_border": "rgba(5, 5, 5, 0.11)"
+    "tab_item_active_bg": "orange",
+    "tab_item_non_active_color": "#a1b2ce",
+    "tab_item_close_color": "#a1b2ce",
+    "modal_text_color":"#a1b2ce",
+    "modal_border": "#a1b2ce"
 }

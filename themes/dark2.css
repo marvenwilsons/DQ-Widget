@@ -1,0 +1,44 @@
+:root{
+    --c1: #26344a;
+    --c2: #a1b2ce;
+    --c3: #1f2b3d;
+    --c4: #3c4244;
+}
+
+.widget_body_bg--dark2 {
+    background: var(--c1) !important;
+}
+/* title */
+.widget_title_color--dark2 {
+    color: var(--c2) !important;
+}
+.widget_title_bg--dark2 {
+    background: var(--c2) !important;
+}
+/* tab */
+.widget_tab_bg--dark2 {
+    /** background color of tab host */
+    background: var(--c1) !important;
+}
+.widget_tab_item--dark2{
+    /** non active tab text color */
+    color: var(--c2) !important;
+}
+.widget_tab_item-active_bg--dark2{
+    /** backgroud of active tab item
+    */
+    background: orange;
+}
+.widget_tab_item-active_color--dark2{
+    /** text color of active tab  &
+        color of the close tab btn
+    */
+    color: var(--c3) !important; 
+}
+/* modal */
+.widget_modal_color--dark2 {
+    color: var(--c2) !important;
+}
+.widget_modal_border--dark2 {
+    border: 1px solid var(--c2) !important;
+}

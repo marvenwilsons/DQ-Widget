@@ -1,5 +1,6 @@
 <template>
-    <section v-if="mytheme" :style="{ background: mytheme.body_bg, overflow:'hidden'}" class="widgetsection systemui s relative fullwidth">
+    <section v-if="mytheme" :style="{ overflow:'hidden'}" 
+        :class="[ 'widgetsection', 'systemui', 's', 'relative', 'fullwidth', `widget_body_bg--${mytheme}`]">
         <slot :selectedMenu__payload="menuPayload" :selectedMenu="currentSelectedMenu" :widgetState="currentWidgetState" name="widget" ></slot>
     </section>
 </template>
@@ -18,10 +19,8 @@ export default {
     mounted() {
         if(!this.theme) {
             this.mytheme = themes.light
-        } else if(typeof this.theme == 'object') {
+        } else {
             this.mytheme = this.theme
-        } else if(typeof this.theme == 'string') {
-            this.mytheme = themes[this.theme]
         }
         // mountController is called by child component
         this.mountController = (childMethod) => {
@@ -54,7 +53,8 @@ export default {
 }
 </script>
 
-<style>
+<style lang="css" >
+@import "./themes/themes.css";
 .widgetsection {
   border-radius: 4px !important;
 }
