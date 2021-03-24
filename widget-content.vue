@@ -6,7 +6,8 @@
                 <transition name="fade2" >
                     <section v-if="modal && show" class="absolute fullwidth fullheight-percent pad125" style="z-index:1" >
                         <div @click="modal = false" class="flex flexcenter flexcol fullheight-percent pad125 relative" >
-                            <div @click.stop="" class="borderRad4 pad125 ws" 
+                            <div @click.stop="" 
+                                :class="['borderRad4 pad125 ws',`widget_modal_color--${theme} widget_modal_border--${theme} widget_body_bg--${theme}`]" 
                                 :style="{
                                     maxHeight:'80%', 
                                     minWidth:'80%', 
@@ -70,6 +71,6 @@ export default {
   opacity: 0;
 }
 .relative{
-    transition: 0.3s;
+    transition: 0.1s;
 }
 </style>
