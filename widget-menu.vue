@@ -5,7 +5,7 @@
                 v-if="theme"
                 id="dq-host-container"  
                 :style="{height:'39px', overflowY:'hidden', overflowX: 'auto', margin:0, padding:0, whiteSpace: 'nowrap'}" 
-                :class="['flex', 'ws', 'relative', `widget_tab_bg--${theme}`]" 
+                :class="['flex','dashboard-component-ribbon']" 
             >
                 <div class="absolute" >
                     <div class="flex padleft050 padright050" >
@@ -13,13 +13,13 @@
                             v-for="(item, item_index) in currentMenus" :key="`${item}-${item_index}`" 
                             
                             :class="['borderRad4 pad025 padleft050 padright050 calItem',
-                                selectedMenu == item_index ? `widget_tab_item-active_bg--${theme}` : `widget_tab_item--${theme}`
+                                selectedMenu == item_index ? `dashboard-active` : `staticTextColor dashboard-button-static dashboard-hover-shadow-bottom`
                             ]"  
                             >
                                 <span 
                                     @click.self="selectedMenu = item_index" 
                                     :class="['systemui',
-                                        selectedMenu == item_index ? `widget_tab_item-active_color--${theme}` : `widget_tab_item--${theme}`
+                                        selectedMenu == item_index ? `dashboard-static-text` : `dashboard-static-text`
                                     ]" 
                                 >
                                         {{item}}
@@ -30,7 +30,7 @@
                                     v-if="closableMenus.includes(item)"
                                     small
                                     :class="[
-                                        selectedMenu == item_index ? `widget_tab_item-active_color--${theme}` : `widget_tab_item--${theme}`
+                                        selectedMenu == item_index ? `dashboard-static-text` : `dashboard-static-text`
                                     ]"
                                     >
                                     mdi-close
@@ -158,6 +158,6 @@ export default {
     min-width: 40px;
 }
 .ws{
-    box-shadow: 0px 16px 15px -3px rgba(5, 5, 5, 0.11);
+    /* box-shadow: 0px 16px 15px -3px rgba(5, 5, 5, 0.11); */
 }
 </style>

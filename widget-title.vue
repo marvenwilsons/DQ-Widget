@@ -1,17 +1,17 @@
 <template>
-    <section role="title" v-if="theme" 
-        :class="['flex flexcenter pad125 widgetTitle', `widget_title_color--${theme}`]" >
+    <section role="title" 
+        :class="['flex flexcenter pad125 dashboard-component-title']" >
         <slot ></slot> 
         <v-icon 
             v-if="state == false" 
             @click="toggle" 
-            :class="['pointer marginleft050',`widget_title_color--${theme}`]" >
+            :class="['pointer marginleft050 dashboard-static-text']" >
                 mdi-menu-down
         </v-icon>
         <v-icon 
             v-if="state == true" 
             @click="toggle" 
-            :class="['pointer marginleft050',`widget_title_color--${theme}`]" >
+            :class="['pointer marginleft050 dashboard-static-text']" >
                 mdi-menu-up
         </v-icon>
     </section>
@@ -22,11 +22,9 @@ export default {
     props: ['widgetState'],
     data: () => ({
         state: true,
-        theme: undefined
     }),
     mounted() {
         setTimeout(() => {
-            this.theme = this.$parent.mytheme
             if(this.$parent.currentWidgetState == false && typeof this.$parent.currentWidgetState == 'boolean') {
                 this.state = false
             }

@@ -1,12 +1,11 @@
 <template>
     <section v-if="mytheme" :style="{ overflow:'hidden'}" 
-        :class="[ 'widgetsection', 'systemui', 's', 'relative', 'fullwidth', `widget_body_bg--${mytheme}`]">
+        :class="[ 'widgetsection', 'systemui', 's', 'dashboard-component-wrapper']">
         <slot :selectedMenu__payload="menuPayload" :selectedMenu="currentSelectedMenu" :widgetState="currentWidgetState" name="widget" ></slot>
     </section>
 </template>
 
 <script>
-import themes from './themes/index'
 export default {
     props: ['show', 'theme'],
     data: () => ({
@@ -18,7 +17,7 @@ export default {
     }),
     mounted() {
         if(!this.theme) {
-            this.mytheme = themes.light
+            this.mytheme = 'light'
         } else {
             this.mytheme = this.theme
         }
@@ -52,10 +51,3 @@ export default {
     }
 }
 </script>
-
-<style lang="css" >
-@import "./themes/themes.css";
-.widgetsection {
-  border-radius: 4px !important;
-}
-</style>

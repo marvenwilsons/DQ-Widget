@@ -27,7 +27,7 @@
 .widget_tab_item-active_bg--dark2{
     /** backgroud of active tab item
     */
-    background: orange;
+    background: orange !important;
 }
 .widget_tab_item-active_color--dark2{
     /** text color of active tab  &

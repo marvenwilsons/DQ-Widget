@@ -5,17 +5,15 @@
                 <!-- modal -->
                 <transition name="fade2" >
                     <section v-if="modal && show" class="absolute fullwidth fullheight-percent pad125" style="z-index:1" >
-                        <div @click="modal = false" class="flex flexcenter flexcol fullheight-percent pad125 relative" >
+                        <div @click="modal = false" class="flex flexcenter flexcol fullheight-percent pad125 relative overflowhidden" >
                             <div @click.stop="" 
-                                :class="['borderRad4 pad125 ws',`widget_modal_color--${theme} widget_modal_border--${theme} widget_body_bg--${theme}`]" 
+                                :class="['borderRad4 pad125 widgetParent border dashboard-modal dashboard-shadow-all-sides']" 
                                 :style="{
                                     maxHeight:'80%', 
                                     minWidth:'80%', 
                                     maxWidth:'80%', 
-                                    overflow:'auto', 
-                                    border: `1px solid ${theme.modal_border}`,
-                                    background: theme.body_bg,
-                                    color: theme.modal_text_color
+                                    overflow:'auto',
+                                    borderRadius: '4px'
                                 }" >
                                 <slot :modalContext="modalContext" name="modal" ></slot>
                             </div>
@@ -42,8 +40,7 @@ export default {
     data: () => ({
         modal: false,
         modalContext: undefined,
-        show: true,
-        theme: undefined
+        show: true
     }),
     methods: {
         showModal(itemContent) {
@@ -56,7 +53,6 @@ export default {
     },
     mounted() {
         setTimeout(() => {
-            this.theme = this.$parent.mytheme
             this.$parent.mountController(this.showContent)
         }, 5)
     }
