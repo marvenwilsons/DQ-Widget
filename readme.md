@@ -32,8 +32,21 @@ module.exports = {
 }
 ```
 - Install CSS Styles - this component is using dq-css
-1. git clone dq-css inside assets folder: `https://github.com/marvenwilsons/DQ-CSS.git`
-2. register css to `nuxt.config.js`
+1. install `@nuxtjs/color-mode`. Read more about `color-mode` https://color-mode.nuxtjs.org/
+2. register color mode in nuxt config build modules
+```js
+  buildModules: [
+    '@nuxtjs/color-mode'
+  ],
+```
+```js
+// accessing color mode
+$colorMode.preference
+// mutating color mode
+$colorMode.preference = 'dark'
+```
+3. git clone dq-css inside assets folder: `https://github.com/marvenwilsons/DQ-CSS.git`
+4. register css to `nuxt.config.js`
 ```js
   css: [
     '@/assets/dq-css/dq-fw-0.3.css',
