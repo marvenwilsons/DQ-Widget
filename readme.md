@@ -31,8 +31,16 @@ module.exports = {
     ],
 }
 ```
-### Vue.js
-- for plain vue scafolding, do the same steps taken in nuxt.js instructions, then you can import each components in your custom components.
+- Install CSS Styles - this component is using dq-css
+1. git clone dq-css `https://github.com/marvenwilsons/DQ-CSS.git`
+2. register css to `nuxt.config.js`
+```js
+  css: [
+    '@/assets/dq-css/dq-fw-0.3.css',
+    '@/assets/dq-css/normalize.css',
+    '@/assets/dq-css/theme/main.css'
+  ]
+```
 
 # Widget Features
 - tabs
