@@ -32,7 +32,7 @@ module.exports = {
 }
 ```
 - Install CSS Styles - this component is using dq-css
-1. git clone dq-css `https://github.com/marvenwilsons/DQ-CSS.git`
+1. git clone dq-css inside assets folder: `https://github.com/marvenwilsons/DQ-CSS.git`
 2. register css to `nuxt.config.js`
 ```js
   css: [
