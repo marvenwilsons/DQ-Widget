@@ -1,5 +1,5 @@
 <template>
-    <section v-if="mytheme" :style="{ overflow:'hidden'}" 
+    <section v-if="mytheme"
         :class="[ 'widgetsection', 'systemui', 's', 'dashboard-component-wrapper']">
         <slot :selectedMenu__payload="menuPayload" :selectedMenu="currentSelectedMenu" :widgetState="currentWidgetState" name="widget" ></slot>
     </section>
