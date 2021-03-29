@@ -4,7 +4,7 @@
             <section  class="fullwidth borderRad4 flex flexwrap relative" >
                 <!-- modal -->
                 <transition name="fade2" >
-                    <section v-if="modal && show" class="absolute fullwidth fullheight-percent pad125" style="z-index:1" >
+                    <section v-if="modal && show" class="absolute fullwidth fullheight-percent pad125" style="z-index:900" >
                         <div @click="modal = false" class="flex flexcenter flexcol fullheight-percent pad125 relative overflowhidden" >
                             <div @click.stop="" 
                                 :class="['borderRad4 pad125 widgetParent border dashboard-modal dashboard-shadow-all-sides']" 
